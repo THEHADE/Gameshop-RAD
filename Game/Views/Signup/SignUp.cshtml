@@ -1,0 +1,32 @@
+﻿@section Styles {
+    <link href="~/css/signup.css" rel="stylesheet" />
+}
+
+@using GameShop.Models.ViewModels
+
+@model SignupVM
+
+
+
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<form asp-action="SignUp" asp-controller="SignUp" method="post">
+    <h3>Signup Here</h3>
+
+    <label asp-for="Email">Email</label>
+    <input asp-for="Email" type="text" placeholder="Email" id="username">
+    <span style="color:red; font-size:small" asp-validation-for="Email"></span>
+
+    <label asp-for="Password">Password</label>
+    <input asp-for="Password" type="password" placeholder="Password" id="password">
+    <span style="color:red; font-size:small" asp-validation-for="Password"></span>
+
+    <label asp-for="RepeatPassword">Repeat Password</label>
+    <input asp-for="RepeatPassword" type="password" placeholder="Repeat Password" id="password">
+    <span style="color:red; font-size:small" asp-validation-for="RepeatPassword"></span>
+
+    <button type="submit">Sign Up</button>
+    <p style="margin:0; font-size:small">Do you want to <a asp-action="Login" asp-controller="Login" style="color:aqua">log in</a>?</p>
+</form>
